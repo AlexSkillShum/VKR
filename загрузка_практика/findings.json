@@ -1,0 +1,710 @@
+[
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/config/config.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/helpers/request_response_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/helpers/session_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/helpers/jwt_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/models/SignUpModuleHandler.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/models/Model_statement.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/models/Model_my_account.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/models/Model_beneficiary.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/models/LogoutModuleHandler.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/models/Model_edit_account.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/models/Model_passwd.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/models/Model_otp.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/models/LoginModuleHandler.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/models/Model_loan.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/controllers/Beneficiary.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/application/libraries/REST_Controller.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/core/Security.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/core/Output.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/core/Input.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/helpers/date_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/helpers/directory_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/helpers/string_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/helpers/url_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/helpers/file_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/helpers/captcha_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/helpers/form_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "CSRF",
+        "description": "CSRF vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/helpers/form_helper.php",
+        "severity": "Low",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/helpers/cookie_helper.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/DB_utility.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/DB_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/DB_cache.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/DB_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/DB.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/DB_query_builder.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/sqlite3/sqlite3_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/sqlite3/sqlite3_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/mssql/mssql_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:00"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/mssql/mssql_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/mssql/mssql_utility.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/sqlite/sqlite_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/sqlite/sqlite_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/oci8/oci8_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/oci8/oci8_utility.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/oci8/oci8_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/ibase/ibase_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/ibase/ibase_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/sqlsrv/sqlsrv_utility.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/sqlsrv/sqlsrv_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/sqlsrv/sqlsrv_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/mysqli/mysqli_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/mysqli/mysqli_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/mysqli/mysqli_utility.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/postgre/postgre_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/postgre/postgre_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/postgre/postgre_utility.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/mysql/mysql_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/mysql/mysql_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/mysql/mysql_utility.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/pdo_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/pdo_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_informix_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_informix_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_sqlite_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_cubrid_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_pgsql_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_dblib_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_dblib_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_4d_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_oci_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_cubrid_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_4d_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_oci_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_mysql_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_firebird_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_pgsql_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_sqlite_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_ibm_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_sqlsrv_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_sqlsrv_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_odbc_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_mysql_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_firebird_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/pdo/subdrivers/pdo_ibm_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/cubrid/cubrid_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/cubrid/cubrid_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/odbc/odbc_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/database/drivers/odbc/odbc_forge.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Xmlrpcs.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Table.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Pagination.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Xmlrpc.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Encryption.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Form_validation.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Zip.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Upload.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Javascript.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "XSS",
+        "description": "XSS vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Javascript.php",
+        "severity": "Medium",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Profiler.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Image_lib.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Cart.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Ftp.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Migration.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Typography.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Session/drivers/Session_database_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Session/drivers/Session_redis_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Session/drivers/Session_memcached_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Session/drivers/Session_files_driver.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Cache/Cache.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Cache/drivers/Cache_apc.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Cache/drivers/Cache_file.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Cache/drivers/Cache_dummy.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Cache/drivers/Cache_redis.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Cache/drivers/Cache_wincache.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/libraries/Cache/drivers/Cache_memcached.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/language/english/upload_lang.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/language/english/db_lang.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    },
+    {
+        "title": "SQL Injection",
+        "description": "SQL Injection vulnerability found in file: /home/ubuntu/Downloads/UnSAFE_Bank/Backend/src/api/system/language/english/ftp_lang.php",
+        "severity": "High",
+        "date": "2024-04-03 15:57:01"
+    }
+]
