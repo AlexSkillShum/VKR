@@ -1,189 +1,279 @@
-import os  # Импорт модуля для работы с операционной системой
-import json  # Импорт модуля для работы с JSON данными
-import time  # Импорт модуля для работы с датой и временем
-import requests  # Импорт модуля для выполнения HTTP-запросов
-import re  # Импорт модуля для работы с регулярными выражениями
-import git  # Импорт модуля для работы с репозиторием GitLab (не используется в данной версии)
+import os 		# Модуль для работы с операционной системой
+import json 		# Модуль для работы с JSON-файлами
+import time 		# Модуль для работы со временем
+import requests 	# Модуль для отправки HTTP-запросов
+import re 		# Модуль для работы с регулярными выражениями
+import paramiko 	# Модуль для работы с SSH-подключениями
 
-# Функция для загрузки локальной базы уязвимостей из файла JSON
+# Загрузка базы уязвимостей из файла JSON
 def load_vulnerability_database(vulnerability_database):
-    if os.path.isfile(vulnerability_database):  # Проверка существования файла
-        with open(vulnerability_database, 'r') as f:  # Открытие файла на чтение
-            return json.load(f)  # Загрузка и возвращение содержимого файла JSON
+
+"""
+    Загружает базу уязвимостей из файла JSON.
+    Parameters:
+    vulnerability_database (str): Путь к файлу с базой уязвимостей.
+    Returns:
+        list: Список уязвимостей.
+"""
+
+          # Проверка существования файла с базой уязвимостей
+    if os.path.isfile(vulnerability_database):
+        # Если файл существует, открываем его и загружаем данные
+        with open(vulnerability_database, 'r') as f:
+            return json.load(f)
     else:
+
+        # Если файла не существует, выводим ошибку
         print("Ошибка: Некорректный путь к файлу с базой уязвимостей")
-        return []  # Возвращение пустого списка в случае ошибки
+        return []
 
-# Функция для сканирования приложения на наличие уязвимостей
-def analyze_source_code(source_folder, vulnerabilities):
-    findings = []  # Создание списка для хранения найденных уязвимостей
+# Запись результатов сканирования в файл JSON
+def write_findings_to_file(findings, output_file):
 
-    # Проверка наличия уязвимости в базе уязвимостей
-    for root, dirs, files in os.walk(source_folder):  # Перебор всех файлов и папок в исходной папке
-        for file in files:  # Перебор каждого файла
-            if file.endswith(".php"):  # Проверка, что файл - PHP скрипт
-                file_path = os.path.join(root, file)  # Получение пути к файлу
-                with open(file_path, 'r') as f:  # Открытие файла на чтение
-                    php_code = f.read()  # Чтение содержимого PHP файла
+"""
+    Записывает найденные уязвимости в файл JSON.
 
-                    # Проверка каждой уязвимости из локальной базы уязвимостей
-                    for vuln in vulnerabilities:
-                        if vuln in php_code:  # Если уязвимость найдена в коде
-                            findings.append({  # Добавление уязвимости в список найденных
-                                "title": vuln,
-                                "file_path": file_path,
-                                #"severity": "High",  # Установка уровня серьезности уязвимости
-                                "description": f"Уязвимость {vuln} обнаружена в файле: {file_path}",
-                                "date": time.strftime("%Y-%m-%d %H:%M:%S")  # Установка даты обнаружения
-                            })
+    Parameters:
+        findings (list): Список найденных уязвимостей.
+        output_file (str): Имя файла для записи результатов.
+"""
 
-    # Если локальные уязвимости не найдены, проводим сканирование на типовые уязвимости
-    if not findings:
-        findings += scan_for_common_vulnerabilities(source_folder)
+    # Открытие файла для записи
+    with open(output_file, 'w') as f:
+        # Запись результатов в файл с отступами для удобного чтения
+        json.dump(findings, f, indent=4)
 
-    return findings  # Возвращение списка найденных уязвимостей
 
-# Функция для сканирования на типовые уязвимости
-def scan_for_common_vulnerabilities(source_folder):
-    vulnerabilities = []  # Создание списка для хранения найденных типовых уязвимостей
 
-    # Регулярные выражения для поиска типовых уязвимостей
+# Загрузка отчета о найденных уязвимостях в DefectDojo
+def upload_report_to_defectdojo(report_data, url, api_key, product_name, engagement_name):
+
+"""
+    Загружает отчет о найденных уязвимостях в DefectDojo.
+
+    Parameters:
+        report_data (dict): Данные отчета.
+        url (str): URL DefectDojo.
+        api_key (str): API ключ.
+        product_name (str): Название продукта.
+        engagement_name (str): Название проекта.
+"""
+
+    # Формирование заголовков запроса
+    headers = {
+        'Authorization': f'Token {api_key}',
+        'Content-Type': 'application/json'
+    }
+
+    try:
+
+        # Отправка POST-запроса на указанный URL
+        response = requests.post(url, headers=headers, json=report_data)
+
+        # Проверка статуса ответа
+        if response.status_code == 201:
+            print("Отчет успешно загружен в DefectDojo.")
+        else:
+
+                             # Вывод ошибки при неудачной загрузке отчета
+            print(f"Ошибка при загрузке отчета в DefectDojo: {response.status_code} - {response.text}")
+    except Exception as e:
+
+        # Вывод ошибки при возникновении исключения
+        print(f"Ошибка при отправке запроса: {e}")
+
+# Подключение к удаленному хосту по SSH
+def ssh_connect(host, username, password):
+
+"""
+    Устанавливает SSH-соединение с удаленным хостом.
+    Parameters:
+        host (str): IP-адрес хоста.
+        username (str): Имя пользователя.
+        password (str): Пароль.
+
+    Returns:
+        paramiko.SSHClient: Объект клиента SSH.
+"""
+
+    try:
+
+        # Создание объекта SSH-клиента
+        client = paramiko.SSHClient()
+        # Установка политики добавления новых хостов в список доверенных
+        client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+        # Подключение к удаленному хосту
+        client.connect(host, username=username, password=password)
+        return client
+    except paramiko.AuthenticationException:
+
+        # Обработка ошибки аутентификации
+        print("Ошибка аутентификации. Проверьте правильность имени пользователя и пароля.")
+        return None
+    except paramiko.SSHException as e:
+
+        # Обработка ошибки SSH
+        print("Ошибка SSH:", str(e))
+        return None
+
+# Сканирование PHP-файла на уязвимости
+def scan_php_file(file_path, ssh_client, vulnerabilities):
+
+"""
+    Сканирует PHP-файл на наличие уязвимостей.
+    Parameters:
+        file_path (str): Путь к PHP-файлу.
+        ssh_client (paramiko.SSHClient): Объект клиента SSH.
+        vulnerabilities (list): Список уязвимостей.
+    Returns:
+        list: Список найденных уязвимостей.
+"""
+
+    findings = []
+
+    # Получение содержимого PHP-файла через SSH
+    stdin, stdout, stderr = ssh_client.exec_command("cat " + file_path)
+    php_code = stdout.read().decode('utf-8')
+
+    # Поиск уязвимостей в коде PHP
+    for vuln in vulnerabilities:
+        if vuln in php_code:
+
+ # Если уязвимость найдена, добавляем информацию о ней в результаты
+            findings.append({
+                "title": vuln,
+                "description": f"Уязвимость {vuln} обнаружена в файле: {file_path}",
+                "date": time.strftime("%Y-%m-%d %H:%M:%S")
+            })
+
+    # Поиск типовых уязвимостей (SQL Injection, XSS, CSRF)
     sql_pattern = re.compile(r'\b(select|insert|update|delete|drop|truncate|create|alter)\b', re.IGNORECASE)
     xss_pattern = re.compile(r'<script>', re.IGNORECASE)
     csrf_pattern = re.compile(r'<form\b[^<]*(?:(?!<\/form>)<[^<]*)*<\/form>', re.IGNORECASE)
 
-    for root, dirs, files in os.walk(source_folder):  # Перебор всех файлов и папок в исходной папке
-        for file in files:  # Перебор каждого файла
-            if file.endswith(".php"):  # Проверка, что файл - PHP скрипт
-                file_path = os.path.join(root, file)  # Получение пути к файлу
-                with open(file_path, 'r') as f:  # Открытие файла на чтение
-                    php_code = f.read()  # Чтение содержимого PHP файла
+    if sql_pattern.search(php_code):
+        findings.append({
+            "title": "SQL Injection",
+            "description": f"SQL Injection vulnerability found in file: {file_path}",
+            "date": time.strftime("%Y-%m-%d %H:%M:%S")
+        })
 
-                    # Проверка наличия типовых уязвимостей
-                    if sql_pattern.search(php_code):  # Поиск SQL Injection
-                        vulnerabilities.append({
-                            "title": "SQL Injection",
-                            "file_path": file_path,
-                            #"severity": "High",
-                            "description": f"SQL Injection vulnerability found in file: {file_path}",
-                            "date": time.strftime("%Y-%m-%d %H:%M:%S")
-                        })
+    if xss_pattern.search(php_code):
+        findings.append({
+            "title": "XSS",
+            "description": f"XSS vulnerability found in file: {file_path}",
+            "date": time.strftime("%Y-%m-%d %H:%M:%S")
+        })
 
-                    if xss_pattern.search(php_code):  # Поиск XSS
-                        vulnerabilities.append({
-                            "title": "XSS",
-                            "file_path": file_path,
-                            #"severity": "Medium",
-                            "description": f"XSS vulnerability found in file: {file_path}",
-                            "date": time.strftime("%Y-%m-%d %H:%M:%S")
-                        })
+    if csrf_pattern.search(php_code):
+        findings.append({
+            "title": "CSRF",
+            "description": f"CSRF vulnerability found in file: {file_path}",
+            "date": time.strftime("%Y-%m-%d %H:%M:%S")
+        })
 
-                    if csrf_pattern.search(php_code):  # Поиск CSRF
-                        vulnerabilities.append({
-                            "title": "CSRF",
-                            "file_path": file_path,
-                            #"severity": "Low",
-                            "description": f"CSRF vulnerability found in file: {file_path}",
-                            "date": time.strftime("%Y-%m-%d %H:%M:%S")
-                        })
+    return findings
 
-    return vulnerabilities  # Возвращение списка найденных уязвимостей
-
-# Функция для записи найденных уязвимостей в файл JSON
-def write_findings_to_file(findings, output_file):
-    with open(output_file, 'w') as f:  # Открытие файла на запись
-        json.dump(findings, f, indent=4)  # Запись списка уязвимостей в файл JSON с отступами
-
-# Функция для загрузки отчета о найденных уязвимостях в DefectDojo
-def upload_report_to_defectdojo(report_data, url, api_key, product_name, engagement_name):
-    headers = {
-        'Authorization': f'Token {api_key}',
-        'Content-Type': 'application/json'  # Установка типа контента для передачи JSON данных
-    }
-
-    try:
-        response = requests.post(url, headers=headers, json=report_data)  # Отправка POST-запроса с данными отчета
-        if response.status_code == 201:  # Если отчет успешно загружен
-            print("Отчет успешно загружен в DefectDojo.")
-        else:  # Если возникла ошибка при загрузке отчета
-            print(f"Ошибка при загрузке отчета в DefectDojo: {response.status_code} - {response.text}")
-    except Exception as e:
-        print(f"Ошибка при отправке запроса: {e}")
-
-# Функция для преобразования полученного файла с уязвимостями в формат JSON для загрузки в DefectDojo
+# Преобразование результатов сканирования в формат DefectDojo
 def convert_to_defectdojo(input_json):
+
+"""
+    Преобразует список уязвимостей в формат для загрузки в DefectDojo.
+    Parameters:
+        input_json (list): Список уязвимостей.
+    Returns:
+        dict: Данные в формате DefectDojo.
+"""
+
     defectdojo_json = {
         "product": {
-            "name": "UnSAFE_Bank",  # Название продукта
-            "description": "Описание продукта"  # Описание продукта
+            "name": "Название продукта",  
+            "description": "Описание продукта"  
         },
         "engagement": {
-            "name": "Security Testing",  # Название проекта
-            "description": "Описание проекта",  # Описание проекта
-            "target_start": "YYYY-MM-DD",  # Дата начала проекта
-            "target_end": "YYYY-MM-DD"  # Дата окончания проекта
+            "name": "Название проекта",  
+            "description": "Описание проекта",  
+            "target_start": "YYYY-MM-DD",  
+            "target_end": "YYYY-MM-DD"  
         },
         "test": {
-            "test_type": "Тип тестирования",  # Тип тестирования
-            "environment": "Окружение тестирования"  # Окружение тестирования
+            "test_type": "Тип тестирования",  
+            "environment": "Окружение тестирования"  
         },
         "findings": []
     }
 
-    # Преобразование каждого элемента исходного JSON в объект finding для DefectDojo
+    # Преобразование каждого элемента JSON в объект finding для DefectDojo
     for item in input_json:
         finding = {
             "title": item["title"],
-            "file_path": item["file_path"],
-            "severity": "Low",  # Установка уровня серьезности уязвимости
-            "description": "Описание уязвимости"  # Описание уязвимости
+            "file_path": item["file"],
+            "severity": "Low",
+            "description": "Описание уязвимости"
         }
         defectdojo_json["findings"].append(finding)
 
-    return defectdojo_json  # Возвращение отчета в формате JSON для загрузки в DefectDojo
+    return defectdojo_json
 
-# Основная функция для сканирования, создания отчета и записи в файл
+# Основная функция
 def main():
-    # Замените YOUR_GITLAB_URL, YOUR_PROJECT_ID и YOUR_FILE_PATH на соответствующие значения
-    gitlab_url = 'http://10.40.1.10/root/api/v4/projects/1/repository/files/unsafe_bank/raw'
 
-    # Замените YOUR_PRIVATE_TOKEN на ваш токен доступа
-    headers = {'PRIVATE-TOKEN': 'glpat-tB9wGrsz29YGV9CUkNn9'}
+    # Получение данных для подключения к удаленному хосту
+    host = input("Введите IP-адрес хоста для подключения: ")
+    username = input("Введите имя пользователя: ")
+    password = input("Введите пароль: ")
 
-    response = requests.get(gitlab_url, headers=headers)
+    # Установка SSH-соединения
+    ssh_client = ssh_connect(host, username, password)
 
-    if response.status_code == 200:
-        file_content = response.text
-        # Теперь вы можете сканировать содержимое файла на наличие уязвимостей
-    else:
-        print("Ошибка при получении файла:", response.status_code)
+    if ssh_client:
+        try:
 
-    source_folder = 'repo/Backend'  # Путь к папке с исходным кодом приложения (клонированному репозиторию)
-    vulnerability_database = 'nvdcve-1.1-modified.json'  # Путь к файлу с локальной базой уязвимостей
-    output_file = 'findings.json'  # Путь к файлу для записи найденных уязвимостей
-    url = 'http://192.168.56.102:8080/api/v2/import-scan/'  # URL для загрузки отчета в DefectDojo
-    api_key = 'b0ef16376173887e9fc973fceab0d49e611d6c6e'  # Ключ API для доступа к DefectDojo API
-    product_name = "UnSAFE_Bank"  # Имя продукта в DefectDojo
-    engagement_name = "Security Testing"  # Имя вовлечения в DefectDojo
+    # Получение пути к директории для сканирования PHP-файлов
+            directory_path = input("Введите путь до директории для сканирования PHP-файлов на хосте {}: ".format(host))
+            vulnerability_database = "nvdcve-1.1-modified.json"
 
-    # Загрузка локальной базы уязвимостей
-    vulnerabilities = load_vulnerability_database(vulnerability_database)
+            # Загрузка базы уязвимостей
+            vulnerabilities = load_vulnerability_database(vulnerability_database)
+            findings = []
 
-    # Сканирование приложения на наличие уязвимостей
-    findings = analyze_source_code(source_folder, vulnerabilities)
+            # Поиск PHP-файлов в указанной директории
+            stdin, stdout, stderr = ssh_client.exec_command("find " + directory_path + " -name '*.php'")
+            php_files = stdout.read().decode('utf-8').split('\n')
+            php_files = php_files[:-1]
 
-    # Запись найденных уязвимостей в файл
-    if findings:
-        write_findings_to_file(findings, output_file)
-        print(f"Найденные уязвимости записаны в файл: {output_file}")
+            # Сканирование каждого PHP-файла на уязвимости
+            for file_path in php_files:
+                findings.extend(scan_php_file(file_path, ssh_client, vulnerabilities))
 
-        # Преобразование найденных уязвимостей в формат JSON для загрузки в DefectDojo
-        defectdojo_data = convert_to_defectdojo(findings)
+            if findings:
 
-        # Загрузка отчета в DefectDojo
-        upload_report_to_defectdojo(defectdojo_data, url, api_key, product_name, engagement_name)
-    else:
-        print("Не найдено уязвимостей.")
+# Если найдены уязвимости, записываем результаты в файл и выводим отчет в формате DefectDojo
+                print("Найдены уязвимости:")
+                for finding in findings:
+                    print(finding)
+                output_file = "finding.json"
+                write_findings_to_file(findings, output_file)
+                
+                # Преобразование результатов в формат DefectDojo
+                defectdojo_data = convert_to_defectdojo(findings)
+                print("Отчет в формате DefectDojo:")
+                print(json.dumps(defectdojo_data, indent=4))
+            else:
+
+ # Если уязвимостей не найдено, выводим соответствующее сообщение
+                print("Уязвимостей не найдено.")
+
+        except Exception as e:
+
+            # Обработка общих ошибок выполнения программы
+            print("Произошла ошибка:", str(e))
+        finally:
+
+            # Закрытие SSH-соединения при завершении программы
+            ssh_client.close()
 
 if __name__ == "__main__":
     main()
+
